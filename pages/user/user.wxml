@@ -1,0 +1,47 @@
+<!--pages/user/user.wxml-->
+  <view class="profile-info" >
+     <open-data  class="userinfo-avatar" type="userAvatarUrl"></open-data>
+    <view class="info">
+       <open-data class="userinfo-nickname" type="userNickName" ></open-data>
+       <text class="id">{{useraccount.userid}}</text>
+    </view>
+  </view>
+
+  <!-- 按键部分 -->
+<view class="user-menu">
+
+    <view class="item">
+      <navigator url="/pages/user_stu/user_stu" class="a">
+        <image src="/pages/image/stu.png"  class='imgstyle'> </image>
+        <text class="txt">学生入口</text>
+      </navigator>
+    </view>
+
+    <view class="item no-border">
+      <navigator url="/pages/user_teacher/user_teacher" class="a">
+         <image src="/pages/image/teacher.png"  class='imgstyle'> </image>
+        <text class="txt">教师入口</text>
+      </navigator>
+    </view>
+
+    <view class="item item-bottom ">
+      <navigator url="/pages/user_admin/user_admin" class="a">
+        <image src="/pages/image/admin.png"  class='imgstyle'> </image>
+        <text class="txt">管理员入口</text>
+      </navigator>
+    </view>
+
+     <view class="item item-bottom1">
+      <navigator url="" class="a">
+       <image src="/pages/image/set.png"  class='imgstyle'> </image>
+        <text class="txt">设置</text>
+      </navigator>
+    </view>
+
+  </view>
+
+
+   
+
+
+

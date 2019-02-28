@@ -1,0 +1,5 @@
+<!--pages/user_stu/user_stu.wxml-->
+ <van-cell title="进行中的监考" icon="shop-o" size="large" is-link arrow-direction="down" />
+    <van-cell title="已过期的监考" icon="shop-o"     size="large" is-link arrow-direction="down" />
+    <van-cell title="设置" icon="shop-o" is-link size="large" arrow-direction="down" />
+    

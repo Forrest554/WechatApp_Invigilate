@@ -1,0 +1,7 @@
+<!--pages/user_admin/user_admin.wxml-->
+    <van-cell title="上传监考需求" icon="shop-o"     size="large" is-link arrow-direction="down" />
+     <van-cell title="待审核"icon="shop-o" size="large" is-link arrow-direction="down" />
+    <van-cell title="发布招募"icon="shop-o" is-link size="large" arrow-direction="down" />
+     <van-cell title="查看监考报名进"icon="shop-o" size="large" is-link arrow-direction="down" />
+      <van-cell title="导出监考汇总"icon="shop-o" size="large" is-link arrow-direction="down" />
+       <van-cell title="修改已报名"icon="shop-o" size="large" is-link arrow-direction="down" />

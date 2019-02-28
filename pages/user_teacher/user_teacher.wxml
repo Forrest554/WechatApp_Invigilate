@@ -1,0 +1,4 @@
+<!--pages/user_teacher/user_teacher.wxml-->
+ <van-cell title="查看监考报名进度" icon="shop-o" size="large" is-link arrow-direction="down" />
+    <van-cell title="上传监考需求" icon="shop-o"     size="large" is-link arrow-direction="down" />
+    <van-cell title="设置" icon="shop-o" is-link size="large" arrow-direction="down" />

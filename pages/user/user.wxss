@@ -1,0 +1,98 @@
+/* pages/user/user.wxss */
+
+/* part1 */
+.profile-info {
+  width: 100%;
+  height: 280rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 30.25rpx;
+  background: #333;
+}
+.profile-info .info {
+  flex: 1;
+  height: 85rpx;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+open-data[type="userAvatarUrl"]{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    border: 4rpx solid #fff;
+    overflow: hidden;
+}
+open-data[type="userNickName"]{
+    height: 45rpx;
+    line-height: 45rpx;
+    color: #fff;
+    font-size: 37.5rpx;
+}
+.id{
+    height: 45rpx;
+    line-height: 45rpx;
+    color: #fff;
+    font-size: 37.5rpx;
+}
+
+/* part2 */
+.user-menu{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+}
+.user-menu .item{
+    float:left; 
+    width:49%;
+    height: 187.5rpx;
+    border-right: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    text-align: center;
+}
+.user-menu .item .a{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.user-menu .item.no-border {
+    border-right: none;
+}
+.user-menu .item.item-bottom {
+    border-bottom: none;
+}
+.user-menu .item.item-bottom1{
+    border-bottom: none;
+    border-right: none;
+}
+.user-menu .icon{
+    margin: 0 auto;
+    display: block;
+    height: 52.803rpx;
+    width: 52.803rpx;
+    margin-bottom: 16rpx;
+}
+
+.user-menu .txt{
+    display: block;
+    height: 24rpx;
+    width: 100%;
+    font-size: 24rpx;
+    color:#333;
+}
+
+.imgstyle{
+ margin: 0 auto;
+    display: block;
+    height: 80rpx;
+    width: 80rpx;
+    margin-bottom: 16rpx;
+}

@@ -1,0 +1,10 @@
+<!--pages/login/login.wxml-->
+
+<view>
+    <input type='number' placeholder='账 号|请输入工号' bindinput='idInput' >   </input>
+    <input type='text' placeholder='密 码|请输入密码'  confirm-type='done' password='true'        bindinput='pwInput'>   </input>
+    <button type='primary' bindtap='loginbtnclick'> 登录</button>
+</view>
+
+
+
