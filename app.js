@@ -34,7 +34,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    useraccount:null
+    useraccount:null,
+    power:1 //1:学生权限  2: 教师权限   3:管理员权限
   },
   mydata:{
     userid:null,

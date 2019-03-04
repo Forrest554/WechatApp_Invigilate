@@ -15,6 +15,12 @@
    
 </view>
 
+<button type='primary' bindtap='request'>请求</button>
+<view wx:for='{{lati}}' wx:for-index='ind' wx:for-item='im'>
+    {{ind}}:{{im.id}}-{{im.name}}-{{im.password}}
+  </view>
+
+
 <!-- <van-tabbar active="{{ active }}" bind:change="onChange">
   <van-tabbar-item icon="home-o">首页</van-tabbar-item>
   <van-tabbar-item icon="search" >所有监考</van-tabbar-item>

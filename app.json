@@ -1,13 +1,16 @@
 {
   "pages":[
-    "pages/index/index",
     "pages/login/login",
+    "pages/test/test",
+    "pages/index/index",
+    
     "pages/user/user",
     "pages/all/all",
     "pages/user_stu/user_stu",
     "pages/user_admin/user_admin",
     "pages/user_teacher/user_teacher",
     "pages/logs/logs"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",

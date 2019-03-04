@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>信息</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		
+	
+	<table class="table">
+		<thead>
+			<th>名称</th>
+			<th>输入值</th>
+		</thead>
+		<tbody>
+			<tr>
+				<th>课程</th>
+				<th>{{ exam.course }}</th>
+			</tr>
+			<tr>
+				<th>教学班名称</th>
+				<th>{{ exam.classname }}</th>
+			</tr>
+			<tr>
+				<th>班级组成</th>
+				<th>{{ exam.class }}</th>
+			</tr>
+			<tr>
+				<th>任课教师</th>
+				<th>{{ exam.classteacher }}</th>
+			</tr>
+			<tr>
+				<th>考试时间</th>
+				<th>{{ exam.time }}</th>
+			</tr>
+			<tr>
+				<th>考场校区</th>
+				<th>{{ exam.school }}</th>
+			</tr>
+			<tr>
+				<th>是否监考留学生</th>
+				<th>{{ exam.foreign }}</th>
+			</tr>
+			<tr>
+				<th>招募研究生监考人数</th>
+				<th>{{ exam.num }}</th>
+			</tr>
+			<tr>
+				<th>楼号</th>
+				<th>{{ exam.building }}</th>
+			</tr>
+			<tr>
+				<th>考试教室</th>
+				<th>{{ exam.classroom }}</th>
+			</tr>
+			<tr>
+				<th>考场人数</th>
+				<th>{{ exam.examnum }}</th>
+			</tr>
+			<tr>
+				<th>主监考教师</th>
+				<th>{{ exam.teacher }}</th>
+			</tr>	
+		</tbody>
+	</table>
+	</div>
+</body>
+</html>

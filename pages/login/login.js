@@ -8,9 +8,9 @@ Page({
    */
   data: {
     userid:null,
-    password:null
+    password:null,
+    useraccount:null
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -67,7 +67,31 @@ Page({
   },
   //按钮事件
   loginbtnclick:function(){
-    app.globalData.useraccount = {userid:this.data.userid,password:this.data.password}
+    // 
+    //useraccount = { userid: this.data.userid, password: this.data.password }
+    // console.log(app.globalData.useraccount.userid, app.globalData.useraccount.password)
+    var that = this;
+    wx.request({
+      url: 'http://127.0.0.1:3000',
+      data: {
+        sql: "SELECT id ,pwd FROM student_table WHERE id= '" + that.data.userid + "' and pwd= '" + that.data.password + "' union SELECT id , pwd FROM teacher_table where id= '" + that.data.userid + "' and pwd= '" + that.data.password + "' union SELECT id ,pwd FROM admin_table where id= '" + that.data.userid + "' and pwd= '" + that.data.password + "'"},
+      success(res) {
+        console.log(res.data);
+        if(res.data.length==0){
+          console.log("shibai")
+        }else{
+          app.globalData.useraccount = { 
+            userid: res.data[0].id,
+            password: res.data[0].pwd };
+            console.log(app.globalData.useraccount.userid);
+          if (res.data[0].id[0] == 'a') app.globalData.power = 3;
+          if (res.data[0].id[0] == 'T') app.globalData.power = 2;
+          console.log(app.globalData.power);
+
+        }
+      }
+    })
+    
     //提交服务器并且返回
     //................
     wx.switchTab({

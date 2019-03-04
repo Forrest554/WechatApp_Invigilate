@@ -5,6 +5,7 @@ Page({
    */
   data: {
     active: 0,
+    lata:null,
     imgUrls: [
       'https://i2.hdslb.com/bfs/face/66c31cfdac40617600fa8ab1981dd932dc4e6d72.jpg'
     ] 
@@ -21,7 +22,22 @@ Page({
       url: '../user/user',
     })
   },
+  request:function(){
+    var that = this;
+    wx.request({
+      url: 'http://127.0.0.1:3000',
+      data: {
+        sql: 'select * from student',
+      },
+      success(res) {
+        console.log(res.data);
+        that.setData({
+          lati: res.data
+        })
+      }
+    })
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */
