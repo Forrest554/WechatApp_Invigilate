@@ -78,7 +78,7 @@ Page({
       success(res) {
         console.log(res.data);
         if(res.data.length==0){
-          console.log("shibai")
+          console.log("fail")
         }else{
           app.globalData.useraccount = { 
             userid: res.data[0].id,

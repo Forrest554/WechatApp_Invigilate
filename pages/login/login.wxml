@@ -1,10 +1,28 @@
 <!--pages/login/login.wxml-->
-
-<view>
-    <input type='number' placeholder='账 号|请输入工号' bindinput='idInput' >   </input>
-    <input type='text' placeholder='密 码|请输入密码'  confirm-type='done' password='true'        bindinput='pwInput'>   </input>
-    <button type='primary' bindtap='loginbtnclick'> 登录</button>
+<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('https://albedo-theme.com/wp-content/uploads/2016/08/pexels-photo-26180.jpg')">
+  <view class='padding-xl text-white'>
+    <view class='padding-xs text-xl'>
+      加入我们！
+    </view>
+    <view class='padding-xs'>
+      It's Time to Join Us Now！
+    </view>
+  </view>
 </view>
 
-
-
+<view class='padding-sm'>
+  <view class='bg-Gray padding radius text-center light'>
+    <view class="text">
+      <view class="padding-sm radius shadow bg-white">
+        <input type='text' placeholder='账 号|请输入工号' bindinput='idInput'> </input>
+      </view>
+      <view class="padding-sm radius shadow bg-gray"> </view>
+      <view class="padding-sm radius shadow bg-white">
+        <input type='text' placeholder='密 码|请输入密码' confirm-type='done' password='true' bindinput='pwInput'> </input>
+      </view>
+      <view class="padding-sm radius shadow bg-gray">
+        <button class='cu-btn round lg bg-green' bindtap='loginbtnclick'>登录</button>
+      </view>
+    </view>
+  </view>
+</view>

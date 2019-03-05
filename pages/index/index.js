@@ -4,14 +4,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    active: 0,
+    activeNames: '1',
     lata:null,
     imgUrls: [
-      'https://i2.hdslb.com/bfs/face/66c31cfdac40617600fa8ab1981dd932dc4e6d72.jpg'
+      '/pages/image/zjut_flower.jpg',
+      '/pages/image/zjut_flower2.jpg',
+      '/pages/image/zjut_autumn.jpg',
+      '/pages/image/zjut_snow.jpg'
     ] 
   },
   onChange(event) {
+    this.setData({
+      activeNames: event.detail
+      
+    });
     console.log(event.detail);
+    console.log(activeNames);
+  },
+    
+    /*
     if (event.detail == 0) wx.redirectTo({
       url: '../index/index',
     })
@@ -20,8 +31,8 @@ Page({
     })
     if (event.detail == 2) wx.redirectTo({
       url: '../user/user',
-    })
-  },
+    })*/
+  
   request:function(){
     var that = this;
     wx.request({

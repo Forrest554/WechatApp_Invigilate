@@ -1,30 +1,23 @@
 <!--index.wxml-->
 <view >
-<swiper
-  indicator-dots="true"
-  autoplay="true"
-  interval="3000"
-  duration="1000"
->
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="355" height="150" />
-    </swiper-item>
-  </block>
-</swiper>
-   
+      <swiper class="banner"
+        indicator-dots="true"
+        autoplay="true"
+        interval="3000"
+        duration="1000"
+      >
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" background-size="cover" width="355" height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
 </view>
 
+<!-- 
 <button type='primary' bindtap='request'>请求</button>
 <view wx:for='{{lati}}' wx:for-index='ind' wx:for-item='im'>
     {{ind}}:{{im.id}}-{{im.name}}-{{im.password}}
-  </view>
-
-
-<!-- <van-tabbar active="{{ active }}" bind:change="onChange">
-  <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-  <van-tabbar-item icon="search" >所有监考</van-tabbar-item>
-  <van-tabbar-item icon="friends-o" >用户中心</van-tabbar-item>
-</van-tabbar> -->
+  </view> -->
 
 

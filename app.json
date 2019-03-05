@@ -1,16 +1,14 @@
 {
   "pages":[
-    "pages/login/login",
     "pages/test/test",
+    "pages/all/all",
     "pages/index/index",
+    "pages/login/login",
     
     "pages/user/user",
-    "pages/all/all",
     "pages/user_stu/user_stu",
     "pages/user_admin/user_admin",
-    "pages/user_teacher/user_teacher",
-    "pages/logs/logs"
-    
+    "pages/user_teacher/user_teacher"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -19,13 +17,7 @@
     "navigationBarTextStyle":"black"
   },
   "usingComponents": {
-"van-icon":"/pages/index/miniprogram_npm/vant-weapp/icon/index",
-"van-cell": "pages/index/miniprogram_npm/vant-weapp/cell/index",
-"van-cell-group": "pages/index/miniprogram_npm/vant-weapp/cell-group/index",
-"van-panel": "pages/index/miniprogram_npm/vant-weapp/panel/index",
-"van-search": "pages/index/miniprogram_npm/vant-weapp/search/index",
-"van-area": "pages/index/miniprogram_npm/vant-weapp/area/index"
-
+    
   } ,
   "tabBar": {
     "list": [

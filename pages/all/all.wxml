@@ -1,2 +1,17 @@
 <!--pages/all/all.wxml-->
+ <view class='padding-sm' >
+    <view class='bg-brown padding radius text-center light'>
+      <view class="text-lg">
+                  <text class='icon-search lg text-gray'> 按照地点搜索</text>
+            <view class="section">
+              <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                <view class="picker">
+                  考试地点：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+                </view>
+              </picker>
+            </view>
+       </view>
+    </view>
+  </view>
+
 
