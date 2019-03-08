@@ -1,10 +1,12 @@
 {
+  
   "pages":[
-    "pages/test/test",
-    "pages/all/all",
     "pages/index/index",
-    "pages/login/login",
+    "pages/bulletin/bulletin",
+    "pages/all/all",
     
+    "pages/login/login",
+    "pages/test/test",
     "pages/user/user",
     "pages/user_stu/user_stu",
     "pages/user_admin/user_admin",
@@ -17,7 +19,15 @@
     "navigationBarTextStyle":"black"
   },
   "usingComponents": {
-    
+      "van-popup": "/pages/miniprogram_npm/vant-weapp/popup/index",
+      "van-picker": "/pages/miniprogram_npm/vant-weapp/picker/index",
+      "van-button": "/pages/miniprogram_npm/vant-weapp/button/index",
+      "van-toast": "/pages/miniprogram_npm/vant-weapp/toast/index",
+      "van-icon": "/pages/miniprogram_npm/vant-weapp/icon/index",
+      "van-tab": "/pages/miniprogram_npm/vant-weapp/tab/index",
+      "van-tabs": "/pages/miniprogram_npm/vant-weapp/tabs/index",
+      "van-search": "/pages/miniprogram_npm/vant-weapp/search/index"
+
   } ,
   "tabBar": {
     "list": [

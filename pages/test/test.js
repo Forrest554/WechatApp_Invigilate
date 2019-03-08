@@ -1,5 +1,9 @@
 // pages/test/test.js
-//index.js
+
+const citys = {
+  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+  '福建': ['福州', '厦门', '莆田', '三明', '泉州']
+};
 var zhenzisms = require('../../utils/zhenzisms.js');
 //获取应用实例
 const app = getApp();
@@ -10,8 +14,10 @@ Page({
     time: '2019/3/3',
     course: '高等数学',
     school: '浙江工业大学',
-    class: '广B312'
+    class: '广B312',
+   
   },
+  
   onLoad: function () {
 
   },

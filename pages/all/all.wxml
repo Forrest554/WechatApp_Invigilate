@@ -1,17 +1,25 @@
 <!--pages/all/all.wxml-->
- <view class='padding-sm' >
-    <view class='bg-brown padding radius text-center light'>
-      <view class="text-lg">
-                  <text class='icon-search lg text-gray'> 按照地点搜索</text>
-            <view class="section">
-              <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-                <view class="picker">
-                  考试地点：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
-                </view>
-              </picker>
-            </view>
-       </view>
+<van-tabs active="{{ active }}" bind:change="tabChange">
+  <van-tab title="地点搜索">
+    <view class='bg-brown padding radius text-center light' bindtap='pop_show'>
+      <view class="text-sm">
+        <text class='icon-search sm text-gray'> 按照地点搜索</text>
+      </view>
+      <text> {{choice[0]}}-{{choice[1]}} </text>
     </view>
-  </view>
+    <view wx:if="{{choice[0]!=null}}">
+      {{time}}
+    </view>
+    <van-popup show="{{ show }}" position="bottom" overlay="{{ false }}" bind:close="onClose">
+      <van-picker show-toolbar title="选择地点" columns="{{ columns }}" bind:change="onChange" bind:cancel="onCancel" bind:confirm="onConfirm" />
+    </van-popup>
+  </van-tab>
+  <van-tab title="时间搜索">
 
 
+  </van-tab>
+  <van-tab title="关键字搜索">
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" />
+
+  </van-tab>
+</van-tabs>

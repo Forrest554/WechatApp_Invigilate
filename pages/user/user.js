@@ -7,9 +7,36 @@ Page({
    */
   data: {
     userinfo:{},
-    useraccount:null
+    useraccount:null,
+    power:null
   },
- 
+  jmp_stu:function(event){
+    if (app.globalData.power  == 1)
+    wx.navigateTo({
+      url: '/pages/user_stu/user_stu',
+    })
+    else{
+      
+    }
+  },
+  jmp_tea: function (event) {
+    if (app.globalData.power == 2)
+      wx.navigateTo({
+        url: '/pages/user_teacher/user_teacher',
+      })
+    else {
+
+    }
+  },
+  jmp_admin: function (event) {
+    if (app.globalData.power == 3)
+      wx.navigateTo({
+        url: '/pages/user_admin/user_admin',
+      })
+    else {
+
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -20,7 +47,11 @@ Page({
         url: '../login/login',
       })
     }else{
-      this.setData({ useraccount: app.globalData.useraccount})
+      this.setData({ useraccount: app.globalData.useraccount}),
+        this.setData({ power: app.globalData.power })
+      //console.log(power)
+     // console.log(app.globalData.power)
+      
     }
     
   },

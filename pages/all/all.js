@@ -1,52 +1,70 @@
 // pages/all/all.js
+const citys = {
+  '屏峰校区': ['广之楼', '博易楼', '仁和楼'],
+  '朝晖校区': ['子良楼', '综合楼']
+};
 var that
-var list = []
 Page({
-
   /**
-   * 页面的初始数据
+   * 页面33
    */
   data: {
-    multiIndex: [0, 0],
-    multiArray: [['屏峰校区', '朝晖校区'], ['广之楼', '博易楼','仁和楼']],
-    objectMultiArray:
-      [
-        { "regid": "10", "parid": "1", "regname": "屏峰校区", "regtype": "1", "ageid": "0" }, 
-        { "regid": "11", "parid": "1", "regname": "朝晖校区", "regtype": "1", "ageid": "0" },
-         { "regid": "3", "parid": "10", "regname": "广之楼", "regtype": "2", "ageid": "0" },
-        { "regid": "4", "parid": "10", "regname": "博易楼", "regtype": "2", "ageid": "0" },
-        { "regid": "5", "parid": "10", "regname": "仁和楼", "regtype": "2", "ageid": "0" },
-        { "regid": "6", "parid": "11", "regname": "子良楼", "regtype": "2", "ageid": "0" },
-        { "regid": "7", "parid": "11", "regname": "综合楼", "regtype": "2", "ageid": "0" }
-        ]
-
+    show: false,
+    choice:null,
+    columns: [
+      {
+        values: Object.keys(citys),
+        className: 'column1'
+      },
+      {
+        values: citys['屏峰校区'],
+        className: 'column2',
+        defaultIndex: 2
+      }
+    ],
+      time:null
+  },
+  pop_show(){
+    this.setData({ show: true });
+  },
+  onClose() {
+    this.setData({ show: false });
   },
   onChange(event) {
     const { picker, value, index } = event.detail;
-    picker.setColumnValues(1, citys[values[0]]);
-  },
-  bindMultiPickerChange: function (e) {
-    that.setData({
-      "multiIndex[0]": e.detail.value[0],
-      "multiIndex[1]": e.detail.value[1]
-    })
-  },
-  bindMultiPickerColumnChange: function (e) {
-    switch (e.detail.column) {
-      case 0:
-        list = []
-        for (var i = 0; i < that.data.objectMultiArray.length; i++) {
-          if (that.data.objectMultiArray[i].parid == that.data.objectMultiArray[e.detail.value].regid) {
-            list.push(that.data.objectMultiArray[i].regname)
-          }
+    picker.setColumnValues(1, citys[value[0]]);
+  }, onConfirm(event) {
+    var that = this;
+    //const { picker, value, index } = event.detail;
+    console.log(event.detail.value[0], event.detail.value[1])
+    //that.data.choice = event.detail.value;
+    that.setData({ choice: event.detail.value })
+    that.setData({ show: false })
+    //-----------------------------------
+    //  database
+    wx.request({
+      url: 'http://127.0.0.1:3000',
+      data: {
+        sql: "SELECT time  FROM need_table WHERE school= '" + that.data.choice[0] + "' and building= '" + that.data.choice[1] + "'"
+      },
+      success(res) {
+        console.log(res.data);
+        if (res.data.length == 0) {
+          console.log("fail")
+        } else {
+         that.setData({time:res.data[0].time })
+         console.log(that.data.time)
         }
-        that.setData({
-          "multiArray[1]": list,
-          "multiIndex[0]": e.detail.value,
-          "multiIndex[1]": 0
-        })
+      }
+    })
+   // console.log(choice)
+  },
+  // 关键字搜索
+  onSearch(){
 
-    }
+  },
+  onCancel() {
+    this.setData({ show: false });
   },
   /**
    * 生命周期函数--监听页面加载

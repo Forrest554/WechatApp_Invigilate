@@ -8,27 +8,26 @@
   </view>
 
   <!-- 按键部分 -->
-<view class="user-menu">
-
-    <view class="item">
-      <navigator url="/pages/user_stu/user_stu" class="a">
+<view class="user-menu" >
+    <view class="item"bindtap="jmp_stu">
+      <view class="a">
         <image src="/pages/image/stu.png"  class='imgstyle'> </image>
         <text class="txt">学生入口</text>
-      </navigator>
+      </view>
     </view>
 
-    <view class="item no-border">
-      <navigator url="/pages/user_teacher/user_teacher" class="a">
+    <view class="item no-border"bindtap="jmp_tea">
+      <view class="a">
          <image src="/pages/image/teacher.png"  class='imgstyle'> </image>
         <text class="txt">教师入口</text>
-      </navigator>
+      </view>
     </view>
 
-    <view class="item item-bottom ">
-      <navigator url="/pages/user_admin/user_admin" class="a">
+    <view class="item item-bottom " bindtap="jmp_admin">
+      <view class="a">
         <image src="/pages/image/admin.png"  class='imgstyle'> </image>
         <text class="txt">管理员入口</text>
-      </navigator>
+      </view>
     </view>
 
      <view class="item item-bottom1">

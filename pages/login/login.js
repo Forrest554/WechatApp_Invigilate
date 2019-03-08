@@ -1,5 +1,5 @@
 // pages/login/login.js
-
+import Toast from '../miniprogram_npm/vant-weapp/toast/toast';
 var app = getApp()
 Page({
 
@@ -9,7 +9,11 @@ Page({
   data: {
     userid:null,
     password:null,
-    useraccount:null
+    useraccount:null,
+    show: false
+  },
+  onClose() {
+    this.setData({ show: false });
   },
   /**
    * 生命周期函数--监听页面加载
@@ -79,25 +83,22 @@ Page({
         console.log(res.data);
         if(res.data.length==0){
           console.log("fail")
+          Toast.fail('账号或密码错误!');
+         // that.setData({show:true})
         }else{
           app.globalData.useraccount = { 
             userid: res.data[0].id,
             password: res.data[0].pwd };
-            console.log(app.globalData.useraccount.userid);
+          //  console.log(app.globalData.useraccount.userid);
           if (res.data[0].id[0] == 'a') app.globalData.power = 3;
           if (res.data[0].id[0] == 'T') app.globalData.power = 2;
-          console.log(app.globalData.power);
-
+        //  console.log(app.globalData.power);
+          wx.switchTab({
+            url: '../user/user',
+          })
         }
       }
     })
-    
-    //提交服务器并且返回
-    //................
-    wx.switchTab({
-      url: '../user/user',
-    })
-      
   },
   //输入框赋值
   idInput:function(event){
