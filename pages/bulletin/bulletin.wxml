@@ -1,0 +1,68 @@
+<!--pages/bulletin/bulletin.wxml-->
+<view class="cu-chat">
+  <view class="cu-item self">
+    <view class="main">
+      <view class='content bg-green shadow'>
+        <text>有大事发生啦！！！快来看呀</text>
+      </view>
+    </view>
+    <view class="cu-avatar radius" style="background-image:url(/images/ava-xg.png);"></view>
+    <view class='date'>2019年3月4日 13:23</view>
+  </view>
+  <view class="cu-item">
+    <view class="cu-avatar radius" style="background-image:url(/images/ava-xj.png);"></view>
+    <view class="main">
+      <view class='content shadow'>
+        <text>啥事 啥事 啥事</text>
+      </view>
+    </view>
+    <view class='date '> 13:23</view>
+  </view>
+
+  <view class="cu-item self">
+    <view class="main">
+      <image src="/images/4x3-1.jpg" class='radius' mode="widthFix"></image>
+    </view>
+    <view class="cu-avatar radius" style="background-image:url(/images/ava-xg.png);"></view>
+    <view class='date'> 13:25</view>
+  </view>
+
+  <view class="cu-item">
+    <view class="cu-avatar radius" style="background-image:url(/images/ava-mht.png);"></view>
+    <view class="main">
+      <view class='content shadow'>
+        @#$^&**
+      </view>
+      <view class='action text-grey'>
+        <text class='icon-warnfill text-red text-xxl'></text>
+        <text class='text-sm margin-left-sm'>翻译错误</text>
+      </view>
+    </view>
+    <view class='date'>13:32</view>
+  </view>
+
+
+  <view class="cu-item self">
+    <view class="main">
+      <view class='content bg-green shadow'>
+        <text>咱们村儿的监考微信小程序终于开通啦！大家呱唧呱唧</text>
+      </view>
+    </view>
+    <view class="cu-avatar radius" style="background-image:url(/images/ava-xg.png);"></view>
+    <view class='date'>2019年3月4日 13:23</view>
+  </view>
+</view>
+
+
+
+
+<view class="cu-bar foot input">
+  <view class='action'>
+    <text class='icon-sound text-grey'></text>
+  </view>
+  <input class='solid-bottom' focus="{{false}}" maxlength="300" cursor-spacing="10"></input>
+  <view class='action'>
+    <text class='icon-emojifill text-grey'></text>
+  </view>
+  <button class='cu-btn bg-green shadow'>发送</button>
+</view>

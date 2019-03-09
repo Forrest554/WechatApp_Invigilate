@@ -1,38 +1,49 @@
-<!--index.wxml-->
-<view >
-      <swiper class="banner"
-        indicator-dots="true"
-        autoplay="true"
-        interval="3000"
-        duration="1000"
-      >
-        <block wx:for="{{imgUrls}}">
-          <swiper-item>
-            <image src="{{item}}" class="slide-image" background-size="cover" width="355" height="150" />
-          </swiper-item>
-        </block>
-      </swiper>
+<!--pages/list/list.wxml-->
+<!-- 轮播图 -->
+<view>
+  <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+    <swiper-item wx:for="{{pictureList}}" wx:key class="{{cardCur==index?'cur':''}}">
+      <view class='bg-img shadow-blur' bindtap='readMust' style="background-image:url({{item.url}})" id="{{item.name}}">
+        <view class='text-black text-bold text-xxl'>
+          {{item.title}}
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
 </view>
 
+<!-- 所有任务标题栏 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="cu-item">
 
-<!-- <view class="content bg-white" >
-  <view class='grid col-1 padding-lg'>
-    <view class='bg-gray padding radius text-center shadow-blur'>
-      <text>这是内容\n</text>
-      <text>id 为 ： {{id}}\n</text>
-      <text>id 为 ： {{id}}\n</text>
-      <text>id 为 ： {{id}}\n</text>
-      <text>id 为 ： {{id}}\n</text>
-      <text>id 为 ： {{id}}\n</text>
-      <text>id 为 ： {{id}}\n</text>
-      <text>id 为 ： {{id}}\n</text>
-      <text>\n</text>
-      <text>\n</text>
-      <view class='contern'>
-        <button class='cu-btn round lg bg-black shadow'>报名</button>
+    <view class='content '>
+      <text class='icon-tagfill text-red'></text>
+      <text class='text-grey'>所有任务</text>
+    </view>
+    <!-- <view class='action'>
+      <view class="cu-tag round bg-orange light">小哥</view>
+    </view> -->
+  </view>
+</view>
+
+<!-- 监考任务列表 -->
+<view>
+  <view wx:for="{{list}}">
+
+    <view class="cu-card article" bindtap='lookInfo' id='{{item.id}}'>
+      <view class="cu-item shadow light bg-{{colorList[index%5]}}">
+        <view class="title">{{item.time}}</view>
+        <view class="content">
+          <view class="desc">
+            <view>
+              <view class='cu-tag bg-orange light sm round'>{{item.building}}</view>
+              <view class='cu-tag bg-red light sm round'>{{item.classroom}}</view>
+              <view class='cu-tag bg-green light sm round'>{{item.course}}</view>
+              <view class='cu-tag bg-cyan light round'>还差{{}}/{{item.num}}</view>
+            </view>
+          </view>
+        </view>
       </view>
     </view>
   </view>
-</view> -->
-
-
+</view>

@@ -50,6 +50,7 @@ Page({
       success(res) {
         console.log(res.data);
         if (res.data.length == 0) {
+          that.setData({time:"未找到相应的监考需求"})
           console.log("fail")
         } else {
          that.setData({time:res.data[0].time })

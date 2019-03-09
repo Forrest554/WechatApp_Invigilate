@@ -1,0 +1,20 @@
+<!--pages/detail/detail.wxml-->
+<view class="content bg-white" >
+  <view class='grid col-1 padding-lg'>
+    <view class='bg-gray padding radius text-center shadow-blur'>
+      <text>这是内容\n</text>
+      <text>id 为 ： {{id}}\n</text>
+      <text>id 为 ： {{id}}\n</text>
+      <text>id 为 ： {{id}}\n</text>
+      <text>id 为 ： {{id}}\n</text>
+      <text>id 为 ： {{id}}\n</text>
+      <text>id 为 ： {{id}}\n</text>
+      <text>id 为 ： {{id}}\n</text>
+      <text>\n</text>
+      <text>\n</text>
+      <view class='contern'>
+        <button class='cu-btn round lg bg-black shadow'>报名</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,12 +1,15 @@
 {
   
   "pages":[
-    "pages/index/index",
-    "pages/bulletin/bulletin",
-    "pages/all/all",
-    
-    "pages/login/login",
     "pages/test/test",
+    "pages/index/index",
+    
+    "pages/bulletin/bulletin",
+    "pages/must/must",
+    "pages/news/news",
+    "pages/detail/detail",
+    "pages/all/all",
+    "pages/login/login",
     "pages/user/user",
     "pages/user_stu/user_stu",
     "pages/user_admin/user_admin",
@@ -39,7 +42,7 @@
       },
       {
         "pagePath": "pages/all/all",
-        "text": "所有监考",
+        "text": "查找",
         "iconPath": "pages/image/exam_n.png",
         "selectedIconPath": "pages/image/exam_y.png"
       },
