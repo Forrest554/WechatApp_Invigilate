@@ -39,7 +39,7 @@
               <view class='cu-tag bg-orange light sm round'>{{item.building}}</view>
               <view class='cu-tag bg-red light sm round'>{{item.classroom}}</view>
               <view class='cu-tag bg-green light sm round'>{{item.course}}</view>
-              <view class='cu-tag bg-cyan light round'>还差{{}}/{{item.num}}</view>
+              <view class='cu-tag bg-cyan light round'>已报名{{item.hasnum}}/{{item.num}}</view>
             </view>
           </view>
         </view>

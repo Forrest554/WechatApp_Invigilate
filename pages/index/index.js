@@ -35,15 +35,7 @@ Page({
       }
 
     ],
-    list_tem: [{}],
-    list: [{
-      time: "2019-1-1 13:30-15:30", //考试事件
-      classroom: "101", //考试教室
-      course: "大学物理", //考试科目
-      building: "广知楼", //考试楼号
-      num: "2/4", //还差人数/总人数
-      id: 1 //编号
-    }]
+    list: []
   },
   //跳转函数
   readMust: function(e) {
@@ -75,27 +67,25 @@ Page({
     wx.request({
       url: 'http://127.0.0.1:3000',
       data: {
-        sql: "select * from  need_table"
+        sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table  where need_table.ID=find_table.reqid"
       },
       success(res) {
-        console.log(res)
+        //console.log(res)
         let list = that.data.list
+        list = []
         var obj = {}
         for (var i = 0; i < res.data.length; i++) {
           obj.time = res.data[i].time
-          obj.calssroom = res.data[i].classroom
+          obj.classroom = res.data[i].classroom
           obj.course = res.data[i].course
           obj.building = res.data[i].building
           obj.num = res.data[i].yjs_num
           obj.id = res.data[i].ID
+          obj.hasnum = res.data[i].hasnum
           list.push(obj)
           obj = {}
-          console.log(obj)
         }
         that.setData({ list })
-        console.log(list)
-        console.log(that.data.list)
-
       }
     })
   },
@@ -132,7 +122,36 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
+    var that = this
+    wx.request({
+      url: 'http://127.0.0.1:3000',
+      data: {
+        sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table  where need_table.ID=find_table.reqid"
+      },
+      success(res) {
+        //console.log(res)
+        let list = that.data.list
+        list = []
+        var obj = {}
+        for (var i = 0; i < res.data.length; i++) {
+          obj.time = res.data[i].time
+          obj.classroom = res.data[i].classroom
+          obj.course = res.data[i].course
+          obj.building = res.data[i].building
+          obj.num = res.data[i].yjs_num
+          obj.id = res.data[i].ID
+          obj.hasnum = res.data[i].hasnum
+          list.push(obj)
+          obj = {}
+          //console.log(obj)
+        }
+        that.setData({ list })
+        //console.log(list)
+        //console.log(that.data.list)
 
+      }
+    })
+    //wx.showNavigationBarLoading();
   },
 
   /**

@@ -71,16 +71,13 @@ Page({
   },
   //按钮事件
   loginbtnclick:function(){
-    // 
-    //useraccount = { userid: this.data.userid, password: this.data.password }
-    // console.log(app.globalData.useraccount.userid, app.globalData.useraccount.password)
     var that = this;
     wx.request({
       url: 'http://127.0.0.1:3000',
       data: {
         sql: "SELECT id ,pwd FROM student_table WHERE id= '" + that.data.userid + "' and pwd= '" + that.data.password + "' union SELECT id , pwd FROM teacher_table where id= '" + that.data.userid + "' and pwd= '" + that.data.password + "' union SELECT id ,pwd FROM admin_table where id= '" + that.data.userid + "' and pwd= '" + that.data.password + "'"},
       success(res) {
-        console.log(res.data);
+        //console.log(res.data);
         if(res.data.length==0){
           console.log("fail")
           Toast.fail('账号或密码错误!');
@@ -94,7 +91,7 @@ Page({
           if (res.data[0].id[0] == 'T') app.globalData.power = 2;
         //  console.log(app.globalData.power);
           wx.switchTab({
-            url: '../user/user',
+            url: '../index/index',
           })
         }
       }

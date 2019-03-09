@@ -7,19 +7,75 @@
       </view>
       <text> {{choice[0]}}-{{choice[1]}} </text>
     </view>
-    <view wx:if="{{choice[0]!=null}}">
-      {{time}}
-    </view>
     <van-popup show="{{ show }}" position="bottom" overlay="{{ false }}" bind:close="onClose">
       <van-picker show-toolbar title="选择地点" columns="{{ columns }}" bind:change="onChange" bind:cancel="onCancel" bind:confirm="onConfirm" />
     </van-popup>
   </van-tab>
+
+
+  <!-- 按照时间搜索 -->
   <van-tab title="时间搜索">
+    <view class='bg-brown padding radius text-center light' bindtap='timeset_Change'>
+      <view class="text-sm">
+        <text class='icon-search sm text-gray'> 按照时间搜索</text>
+      </view>
+      {{year}}年{{month}}月{{day}}日{{hour}}
+    </view>
+
+
+
+    <!-- 时间调整弹出窗口 -->
+    <view wx:if="{{time_set ==true}}">
+      <view class="flex-item bc_grey">
+        <view class="flex solid-bottom padding justify-between" style="width: 100%;height: 222px; position:fixed;bottom: 0; ">
+          <button class='cu-btn round sm bg-yellow' bindtap='timecancel'>取消</button>
+          <button class='cu-btn round sm bg-red' bindtap='timesure'>确定</button>
+        </view>
+      </view>
+      <view>
+        <picker-view indicator-style="height: 50px;" style="width: 100%; height: 180px;position:fixed;bottom: 0; " value="{{value}}" bindchange="timeChoose">
+
+          <picker-view-column>
+            <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{hours}}" style="line-height: 50px">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
 
 
   </van-tab>
-  <van-tab title="关键字搜索">
-    <van-search value="{{ value }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" />
 
-  </van-tab>
 </van-tabs>
+
+
+
+<!-- 监考任务列表 -->
+<view>
+  <view wx:for="{{list}}">
+
+    <view class="cu-card article" bindtap='lookInfo' id='{{item.id}}'>
+      <view class="cu-item shadow light bg-{{colorList[index%5]}}">
+        <view class="title">{{item.time}}</view>
+        <view class="content">
+          <view class="desc">
+            <view>
+              <view class='cu-tag bg-orange light sm round'>{{item.building}}</view>
+              <view class='cu-tag bg-red light sm round'>{{item.classroom}}</view>
+              <view class='cu-tag bg-green light sm round'>{{item.course}}</view>
+              <view class='cu-tag bg-cyan light round'>已报名{{item.hasnum}}/{{item.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

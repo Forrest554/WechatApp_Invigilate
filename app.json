@@ -1,15 +1,13 @@
 {
-  
   "pages":[
-    "pages/test/test",
+    "pages/login/login",
     "pages/index/index",
-    
+    "pages/test/test",
     "pages/bulletin/bulletin",
     "pages/must/must",
     "pages/news/news",
     "pages/detail/detail",
     "pages/all/all",
-    "pages/login/login",
     "pages/user/user",
     "pages/user_stu/user_stu",
     "pages/user_admin/user_admin",
