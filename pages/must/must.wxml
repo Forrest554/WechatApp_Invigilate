@@ -1,2 +1,53 @@
 <!--pages/must/must.wxml-->
-<text>pages/must/must.wxml</text>
+<view class="cu-card dynamic">
+  <view class="cu-item shadow">
+    <view class="cu-list menu menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+        <view class='content flex-sub'>
+          <view>暗中观察</view>
+          <view class='text-gray text-sm flex justify-between'>
+            2019年3月3日
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='text-content text-black text-bold'>
+     监考须知！！！ （暗中观察.jpg）
+    </view>
+    <!-- 主图 -->
+    <view class="grid col-1 flex-sub padding-lr">
+      <view class="bg-img only-img" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);">
+      </view>
+    </view>
+    <!-- 点赞评论阅读 -->
+    <view class='text-gray text-sm text-right padding'>
+      <text class="icon-attentionfill"></text> 10
+      <text class="icon-appreciatefill"></text> 20
+      <text class="icon-messagefill"></text> 30
+    </view>
+
+    <!-- 循环段 -->
+    <view class="cu-list menu menu-avatar comment solids-top">
+      <view class="cu-item" wx:for="{{must}}">
+        <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);"></view>
+        <view class='content'>
+          <view class='text-grey'>暗中观察喵</view>
+          <view class='text-gray text-content text-df'>
+            {{item}}
+          </view>
+          <view class='margin-top-sm flex justify-between'>
+            <view class='text-gray text-df'>2019年3月3日</view>
+            <view>
+              <!-- 点赞 -->
+              <text class="icon-appreciatefill text-red"></text>
+              <!-- 评论 -->
+              <text class="icon-messagefill text-gray margin-left-sm"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

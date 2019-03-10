@@ -1,5 +1,38 @@
-<!--pages/user_stu/user_stu.wxml-->
- <van-cell title="进行中的监考" icon="shop-o" size="large" is-link arrow-direction="down" />
-    <van-cell title="已过期的监考" icon="shop-o"     size="large" is-link arrow-direction="down" />
-    <van-cell title="设置" icon="shop-o" is-link size="large" arrow-direction="down" />
-    
+<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552207925771&di=f560c420c30cd7ffccc0792d50086c6a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201808%2F18%2F20180818144330_nqede.jpeg')">
+  <view class='padding-xl text-white'>
+    <view class='padding-xs text-xl'>
+      加入我们！
+    </view>
+    <view class='padding-xs'>
+      It's Time to Join Us Now！
+    </view>
+  </view>
+</view>
+
+<view class="cu-list menu sm-border card-menu margin-top">
+  <view class="cu-item arrow">
+    <view class='content'>
+      <navigator class='content' hover-class='none' url='/pages/user_stu/ing/ing' open-type="navigate">
+        <text class='icon-list text-grey'></text>
+        <text class='text-grey'>进行中的监考</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content'>
+      <navigator class='content' hover-class='none' url='/pages/user_stu/past/past' open-type="navigate">
+        <text class='icon-list text-grey'></text>
+        <text class='text-grey'>已过期的监考</text>
+      </navigator>
+    </view>
+  </view>
+
+  <!-- <view class="cu-item arrow">
+    <view class='content'>
+    <navigator class='content' hover-class='none' url='ing/ing' open-type="navigate">
+      <text class='icon-circlefill text-grey'></text>
+      <text class='text-grey'>密码修改</text>
+       </navigator>
+    </view>
+  </view> -->
+</view>

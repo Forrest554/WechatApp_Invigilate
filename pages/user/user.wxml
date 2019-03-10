@@ -31,7 +31,7 @@
     </view>
 
      <view class="item item-bottom1">
-      <navigator url="" class="a">
+      <navigator url="/pages/set/set" class="a">
        <image src="/pages/image/set.png"  class='imgstyle'> </image>
         <text class="txt">设置</text>
       </navigator>

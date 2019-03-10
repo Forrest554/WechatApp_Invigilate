@@ -21,9 +21,6 @@
       </view>
       {{year}}年{{month}}月{{day}}日{{hour}}
     </view>
-
-
-
     <!-- 时间调整弹出窗口 -->
     <view wx:if="{{time_set ==true}}">
       <view class="flex-item bc_grey">
@@ -50,10 +47,24 @@
         </picker-view>
       </view>
     </view>
-
-
   </van-tab>
+  <van-tab title="科目关键字搜索">
+    <view class='bg-brown padding radius text-center light'>
+      <view class="cu-bar search ">
+        <view class='search-form round'>
+          <text class="icon-search"></text>
+          <input type="text" placeholder="搜索图片、文章、视频" confirm-type="search" value="{{inputSearch}}" bindinput='inputChange'></input>
+        </view>
+        <view class='action'>
+          <button class='cu-btn bg-green shadow-blur round' bindtap='onSearch'>搜索</button>
+        </view>
+      </view>
 
+
+
+
+    </view>
+  </van-tab>
 </van-tabs>
 
 

@@ -67,10 +67,10 @@ Page({
     wx.request({
       url: 'http://127.0.0.1:3000',
       data: {
-        sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table  where need_table.ID=find_table.reqid"
+        sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table  where need_table.ID=find_table.reqid and status=0 and examine = 1 "
       },
       success(res) {
-        //console.log(res)
+        console.log(res)
         let list = that.data.list
         list = []
         var obj = {}
@@ -122,36 +122,37 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    var that = this
-    wx.request({
-      url: 'http://127.0.0.1:3000',
-      data: {
-        sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table  where need_table.ID=find_table.reqid"
-      },
-      success(res) {
-        //console.log(res)
-        let list = that.data.list
-        list = []
-        var obj = {}
-        for (var i = 0; i < res.data.length; i++) {
-          obj.time = res.data[i].time
-          obj.classroom = res.data[i].classroom
-          obj.course = res.data[i].course
-          obj.building = res.data[i].building
-          obj.num = res.data[i].yjs_num
-          obj.id = res.data[i].ID
-          obj.hasnum = res.data[i].hasnum
-          list.push(obj)
-          obj = {}
-          //console.log(obj)
-        }
-        that.setData({ list })
-        //console.log(list)
-        //console.log(that.data.list)
+    this.onLoad();
+    // var that = this
+    // wx.request({
+    //   url: 'http://127.0.0.1:3000',
+    //   data: {
+    //     sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table  where need_table.ID=find_table.reqid"
+    //   },
+    //   success(res) {
+    //     //console.log(res)
+    //     let list = that.data.list
+    //     list = []
+    //     var obj = {}
+    //     for (var i = 0; i < res.data.length; i++) {
+    //       obj.time = res.data[i].time
+    //       obj.classroom = res.data[i].classroom
+    //       obj.course = res.data[i].course
+    //       obj.building = res.data[i].building
+    //       obj.num = res.data[i].yjs_num
+    //       obj.id = res.data[i].ID
+    //       obj.hasnum = res.data[i].hasnum
+    //       list.push(obj)
+    //       obj = {}
+    //       //console.log(obj)
+    //     }
+    //     that.setData({ list })
+    //     //console.log(list)
+    //     //console.log(that.data.list)
 
-      }
-    })
-    //wx.showNavigationBarLoading();
+    //   }
+    // })
+    // //wx.showNavigationBarLoading();
   },
 
   /**

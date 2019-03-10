@@ -41,13 +41,14 @@ Page({
     years,
     year: date.getFullYear(),
     months,
-    month: 1,
+    month: '',
     days,
-    day: 23,
+    day: '',
     hours: ["8:15-10:15", "13:30-15:30"],
-    hour: "",
-    value: [9999, 1, 1],
-    time: "",
+    hour: '',
+    value: [9999, 0, 22],
+    time: '',
+    inputSearch: "",
     list: [],
     cardCur: 0, //当前卡片
     colorList: [ //标签颜色
@@ -101,7 +102,7 @@ Page({
     wx.request({
       url: 'http://127.0.0.1:3000',
       data: {
-        sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table where need_table.ID = find_table.reqid and school= '" + that.data.choice[0] + "' and building= '" + that.data.choice[1] + "'"
+        sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table where need_table.ID = find_table.reqid and status=0 and examine = 1 and school= '" + that.data.choice[0] + "' and building= '" + that.data.choice[1] + "'"
       },
       success(res) {
         //console.log(res)
@@ -157,7 +158,7 @@ Page({
     wx.request({
       url: 'http://127.0.0.1:3000',
       data: {
-        sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table where need_table.ID = find_table.reqid and time= '" + that.data.time + "'"
+        sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table where need_table.ID = find_table.reqid and status=0 and examine = 1 and time= '" + that.data.time + "'"
       },
       success(res) {
         //console.log(res)
@@ -197,7 +198,54 @@ Page({
       hour: this.data.hours[val[3]]
     })
   },
-
+  //科目搜索
+  inputChange(e) {
+    var that = this
+    that.setData({
+      inputSearch: e.detail.value
+    })
+    //console.log(e.detail.value)
+  },
+  deal(input) {
+    var len = input.length;
+    var string = "%";
+    for (var i = 0; i < len; i++) {
+      string += input[i] + '%';
+    }
+    return string;
+  },
+  onSearch(e) {
+    var that = this;
+    //console.log(that.data.inputSearch);
+    var str = that.deal(that.data.inputSearch);
+    //console.log(str);
+    wx.request({
+      url: 'http://127.0.0.1:3000',
+      data: {
+        sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table where need_table.ID = find_table.reqid and status=0 and examine = 1 and course like '" + str + "'"
+      },
+      success(res) {
+        //console.log(res)
+        let list = that.data.list
+        list = [];
+        var obj = {}
+        for (var i = 0; i < res.data.length; i++) {
+          obj.time = res.data[i].time
+          obj.classroom = res.data[i].classroom
+          obj.course = res.data[i].course
+          obj.building = res.data[i].building
+          obj.num = res.data[i].yjs_num
+          obj.id = res.data[i].ID
+          obj.hasnum = res.data[i].hasnum
+          list.push(obj)
+          obj = {}
+        }
+        that.setData({
+          list
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

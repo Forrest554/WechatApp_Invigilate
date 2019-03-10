@@ -1,0 +1,58 @@
+<!--pages/set/set.wxml-->
+
+<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552207925771&di=f560c420c30cd7ffccc0792d50086c6a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201808%2F18%2F20180818144330_nqede.jpeg')">
+  <view class='padding-xl text-white'>
+    <view class='padding-xs text-xl'>
+      加入我们！
+    </view>
+    <view class='padding-xs'>
+      It's Time to Join Us Now！
+    </view>
+  </view>
+</view>
+
+<view class="cu-list menu sm-border card-menu margin-top">
+
+  <view class="cu-item arrow">
+    <view class='content' bindtap="infoShow">
+      <text class='icon-list text-grey'></text>
+      <text class='text-grey'>查看个人信息</text>
+    </view>
+  </view>
+
+  <view class="cu-item arrow">
+    <view class='content' bindtap="infoModi">
+      <text class='icon-list text-grey'></text>
+      <text class='text-grey'>个人信息修改</text>
+    </view>
+  </view>
+
+
+  <view class="cu-item arrow" bindtap="pwdModi">
+    <view class=' content '>
+      <text class='icon-list text-grey '></text>
+      <text class='text-grey '>密码修改</text>
+    </view>
+  </view>
+
+</view>
+<!-- 信息弹出窗 -->
+<van-dialog use-slot async-close title = "个人信息" show="{{ infoshow }}"   bind:confirm="infoConfirm" >
+  <text>工号：{{list.id}}\n</text>
+  <text>姓名：{{list.name}}\n</text>
+  <text>联系方式：{{list.phone}} \n</text>
+</van-dialog>
+
+<!-- 信息修改弹出窗 -->
+<van-dialog use-slot async-close
+title = "个人信息修改" 
+show="{{ infomodishow }}" show-cancel-button bind:confirm="infomodiConfirm" bind:cancel="infomodiClose">
+<van-field value="{{newphone}}" type="number" label="联系方式" placeholder="请输入联系方式 " bind:change="getNewphone" />
+</van-dialog>
+<!-- 密码修改弹出窗 -->
+<van-dialog use-slot async-close show="{{ show }}"
+title = "密码修改"  show-cancel-button bind:confirm="pdwConfirm" bind:cancel="pwdClose">
+  <van-field value="{{oripwd}}" type="password" label="原密码" placeholder="请输入原密码 " bind:change="getori" />
+  <van-field value="{{oripwd2}}" type="password" label="原密码" placeholder="请再次输入原密码 " bind:change="getori2" />
+  <van-field value="{{newpwd}}" type="password" label="新密码" placeholder="请输入新密码 " bind:change="getnew" />
+</van-dialog>
