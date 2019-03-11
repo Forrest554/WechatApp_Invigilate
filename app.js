@@ -1,4 +1,13 @@
 //app.js
+// wx.request({
+//   url: 'http://127.0.0.1:3000',
+//   data: {
+//     sql: "select time,classroom,course,building,school,need_table.ID from  need_table,find_table  where need_table.ID=find_table.reqid and status=0 and examine = 0"
+//   },
+//   success(res) {
+
+//   }
+// })
 App({
   onLaunch: function () {
   },

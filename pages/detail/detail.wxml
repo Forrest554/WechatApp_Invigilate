@@ -2,7 +2,7 @@
 <view class="content bg-white">
   <view class='grid col-1 padding-lg'>
     <view class='bg-gray padding radius text-center shadow-blur' flex-direction="row">
-    <text>监考需求\n</text>
+      <text>监考需求\n</text>
       <view class="text-left">
         <text>课程 ： {{detail.course}}\n</text>
         <text>教学班名称： {{detail.classname}}\n</text>
@@ -16,14 +16,16 @@
         <text>主监考教师信息:{{detail.exam_teacher}}\n</text>
         <text>\n</text>
       </view>
-      <view class='contern'>
-        <view wx:if="{{done==false}}">
-          <button class='cu-btn round lg bg-black shadow' bindtap='comfirm'>报名</button>
+      <view class='contern' wx:if="{{showbutton==true}}">
+        <!-- <view wx:if="{{showbutton==true}}"> -->
+          <view wx:if="{{done==false}}">
+            <button class='cu-btn round lg bg-black shadow' bindtap='comfirm'>报名</button>
+          </view>
+          <view wx:elif="{{done==true}}">
+            <button class='cu-btn round lg bg-red shadow' bindtap='cancel'>取消报名</button>
+          </view>
         </view>
-        <view wx:elif="{{done==true}}">
-          <button class='cu-btn round lg bg-red shadow' bindtap='cancel'>取消报名</button>
-        </view>
-      </view>
+      <!-- </view> -->
     </view>
   </view>
 </view>

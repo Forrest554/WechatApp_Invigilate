@@ -1,8 +1,9 @@
 {
   "pages":[
     "pages/login/login",
+    "pages/user_admin/user_admin",
+    "pages/user_admin/wait/wait",
    "pages/user_stu/ing/ing",
-    
     "pages/user_stu/user_stu",
     "pages/user_stu/past/past",
     "pages/all/all",
@@ -13,8 +14,10 @@
     "pages/must/must",
     "pages/news/news",
     "pages/detail/detail",
+    "pages/webview/webview",
     "pages/user/user",
-    "pages/user_admin/user_admin",
+
+    
     "pages/user_teacher/user_teacher"
   ],
   "window":{

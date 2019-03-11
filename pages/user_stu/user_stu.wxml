@@ -26,13 +26,4 @@
       </navigator>
     </view>
   </view>
-
-  <!-- <view class="cu-item arrow">
-    <view class='content'>
-    <navigator class='content' hover-class='none' url='ing/ing' open-type="navigate">
-      <text class='icon-circlefill text-grey'></text>
-      <text class='text-grey'>密码修改</text>
-       </navigator>
-    </view>
-  </view> -->
 </view>

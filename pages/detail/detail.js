@@ -9,6 +9,7 @@ Page({
     mainID: null, //主键
     id: null, //reqid
     done: false,
+    showbutton:true,
     useraccount: null,
     hasnum: null,
     detail: [],
@@ -165,6 +166,8 @@ Page({
    */
   onLoad: function(options) {
     var that = this
+    if (app.globalData.power == 2 || app.globalData.power == 3)
+      that.setData({ showbutton:false})
     //   console.log(options.id);
     that.setData({
       id: options.id
