@@ -13,7 +13,7 @@
 <view class="cu-list menu sm-border card-menu margin-top">
   <view class="cu-item arrow">
     <view class='content'>
-      <navigator class='content' hover-class='none' url='/pages/webview/webview' open-type="navigate">
+      <navigator class='content' hover-class='none' url='/pages/webview/upload/upload' open-type="navigate">
         <text class='icon-list text-grey'></text>
         <text class='text-grey'>上传监考需求</text>
       </navigator>
@@ -29,26 +29,18 @@
   </view>
   <view class="cu-item arrow">
     <view class='content'>
-      <navigator class='content' hover-class='none' url='' open-type="navigate">
+      <navigator class='content' hover-class='none' url='/pages/fillin/fillin' open-type="navigate">
         <text class='icon-list text-grey'></text>
-        <text class='text-grey'>发布监考招募</text>
+        <text class='text-grey'>填写监考招募</text>
       </navigator>
     </view>
   </view>
-  <view class="cu-item arrow">
+  <view class="cu-item arrow" bindtap='download'>
     <view class='content'>
-      <navigator class='content' hover-class='none' url='' open-type="navigate">
         <text class='icon-list text-grey'></text>
         <text class='text-grey'>导出监考汇总</text>
-      </navigator>
+      
     </view>
   </view>
-  <view class="cu-item arrow">
-    <view class='content'>
-      <navigator class='content' hover-class='none' url='' open-type="navigate">
-        <text class='icon-list text-grey'></text>
-        <text class='text-grey'>修改已报名</text>
-      </navigator>
-    </view>
-  </view>
+  
 </view>

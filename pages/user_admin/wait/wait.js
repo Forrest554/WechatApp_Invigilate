@@ -35,7 +35,7 @@ Page({
     {
       for (var i = 0; i < that.data.list.length; i++)
       wx.request({
-        url: 'http://127.0.0.1:3000',
+        url: 'https://sxtliujiguolema.xyz',
         data: {
           sql: "update find_table set examine = 1 where reqid="+that.data.list[i].id
         },
@@ -48,7 +48,7 @@ Page({
     {
       for (var i = 0; i < that.data.checekValues.length; i++)
         wx.request({
-          url: 'http://127.0.0.1:3000',
+          url: 'https://sxtliujiguolema.xyz',
           data: {
             sql: "update find_table set examine = 1 where reqid=" + that.data.checekValues[i]
           },
@@ -57,7 +57,8 @@ Page({
           }
         })
     }
-    that.onLoad();
+    var options
+    that.onLoad(options);
   },
   /**
    * 生命周期函数--监听页面加载
@@ -66,7 +67,7 @@ Page({
     var that = this
     //that.setData({ userid: app.globalData.useraccount.userid })
     wx.request({
-      url: 'http://127.0.0.1:3000',
+      url: 'https://sxtliujiguolema.xyz',
       data: {
         sql: "select time,classroom,course,building,school,need_table.ID from  need_table,find_table  where need_table.ID=find_table.reqid and status=0 and examine = 0"
       },

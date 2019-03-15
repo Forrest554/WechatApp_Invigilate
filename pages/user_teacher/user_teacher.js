@@ -1,11 +1,11 @@
-// pages/user_teacher/user_teacher.js
+// pages/page1/page1.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userid: 1
   },
 
   /**
@@ -56,11 +56,26 @@ Page({
   onReachBottom: function () {
 
   },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
+  },
+  toUpload: function () {
+    wx.navigateTo({
+      url: '/pages/webview/upload/upload',
+    })
+  },
+  toFillIn: function () {
+    var that = this;
+    wx.navigateTo({
+      url: '/pages/fillin/fillin?userid=' + that.data.userid,
+    })
+  },
+  toCheckProgress: function () {
+    wx.navigateTo({
+      url: '/pages/user_teacher/view/view',
+    })
   }
 })

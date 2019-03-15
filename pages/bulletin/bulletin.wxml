@@ -6,11 +6,11 @@
         <text>有大事发生啦！！！快来看呀</text>
       </view>
     </view>
-    <view class="cu-avatar radius" style="background-image:url(/images/ava-xg.png);"></view>
+    <view class="cu-avatar radius" style="background-image:url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1986662798,1241625891&fm=26&gp=0.jpg);"></view>
     <view class='date'>2019年3月4日 13:23</view>
   </view>
   <view class="cu-item">
-    <view class="cu-avatar radius" style="background-image:url(/images/ava-xj.png);"></view>
+    <view class="cu-avatar radius" style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553081591&di=504690949f11f0040f7d130fd411cf5d&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201810%2F10%2F20181010180457_gfexa.thumb.1000_0.jpg);"></view>
     <view class="main">
       <view class='content shadow'>
         <text>啥事 啥事 啥事</text>
@@ -21,14 +21,14 @@
 
   <view class="cu-item self">
     <view class="main">
-      <image src="/images/4x3-1.jpg" class='radius' mode="widthFix"></image>
+      <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552487025155&di=8c05dd607a690aa5ae7a6b617956c419&imgtype=0&src=http%3A%2F%2Fwx3.sinaimg.cn%2Flarge%2F9e31678cgy1fxrkdrjj6wj20hs0hswf6.jpg" class='radius' mode="widthFix"></image>
     </view>
-    <view class="cu-avatar radius" style="background-image:url(/images/ava-xg.png);"></view>
+    <view class="cu-avatar radius" style="background-image:url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1986662798,1241625891&fm=26&gp=0.jpg);"></view>
     <view class='date'> 13:25</view>
   </view>
 
   <view class="cu-item">
-    <view class="cu-avatar radius" style="background-image:url(/images/ava-mht.png);"></view>
+    <view class="cu-avatar radius" style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553081591&di=504690949f11f0040f7d130fd411cf5d&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201810%2F10%2F20181010180457_gfexa.thumb.1000_0.jpg);"></view>
     <view class="main">
       <view class='content shadow'>
         @#$^&**
@@ -48,7 +48,7 @@
         <text>咱们村儿的监考微信小程序终于开通啦！大家呱唧呱唧</text>
       </view>
     </view>
-    <view class="cu-avatar radius" style="background-image:url(/images/ava-xg.png);"></view>
+    <view class="cu-avatar radius" style="background-image:url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1986662798,1241625891&fm=26&gp=0.jpg);"></view>
     <view class='date'>2019年3月4日 13:23</view>
   </view>
 </view>

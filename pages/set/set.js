@@ -12,10 +12,15 @@ Page({
     infomodishow: false,
     newphone: '',
     oripwd: '',
-    oripwd2: '',
+    newpwd0: '',
     newpwd: '',
     list: [],
     tablename: null
+  },
+  exit:function(){
+    wx.reLaunch({
+      url: '/pages/login/login',
+    })
   },
   //infoshow
   infoShow: function(e) {
@@ -37,7 +42,7 @@ Page({
       })
     }
     wx.request({
-      url: 'http://127.0.0.1:3000',
+      url: 'https://sxtliujiguolema.xyz',
       data: {
         sql: "select * from  " + that.data.tablename + " where ID= '" + app.globalData.useraccount.userid + "'"
       },
@@ -82,7 +87,7 @@ Page({
   infomodiConfirm: function(e) {
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:3000',
+      url: 'https://sxtliujiguolema.xyz',
       data: {
         sql: "update  " + that.data.tablename + " set phone ='" + that.data.newphone + "'where ID= '" + app.globalData.useraccount.userid + "'"
       },
@@ -111,7 +116,7 @@ Page({
   getori2: function(e) {
     var that = this
     that.setData({
-      oripwd2: e.detail
+      newpwd0: e.detail
     })
   },
   getnew: function(e) {
@@ -127,9 +132,12 @@ Page({
   },
   pdwConfirm: function(e) {
     var that = this
+    this.setData({
+      show: false
+    })
     //that.setData({ show: false })
     console.log(that.data.oripwd, that.data.oripwd2)
-    if (that.data.oripwd != that.data.oripwd2)
+    if (that.data.newpwd != that.data.newpwd0)
       wx.showToast({
         title: '两次密码不同',
         icon: 'none',
@@ -145,7 +153,7 @@ Page({
       } else {
         if (app.globalData.power == 1)
           wx.request({
-            url: 'http://127.0.0.1:3000',
+            url: 'https://sxtliujiguolema.xyz',
             data: {
               sql: "update student_table set pwd =" + "'" + that.data.newpwd + "'" + "where id='" + app.globalData.useraccount.userid + "'"
             },
@@ -155,7 +163,7 @@ Page({
           })
         if (app.globalData.power == 2)
           wx.request({
-            url: 'http://127.0.0.1:3000',
+            url: 'https://sxtliujiguolema.xyz',
             data: {
               sql: "update teacher_table set pwd =" + "'" + that.data.newpwd + "'" + "where id='" + app.globalData.useraccount.userid + "'"
             },
@@ -165,7 +173,7 @@ Page({
           })
         if (app.globalData.power == 3)
           wx.request({
-            url: 'http://127.0.0.1:3000',
+            url: 'https://sxtliujiguolema.xyz',
             data: {
               sql: "update admin_table set pwd =" + "'" + that.data.newpwd + "'" + "where id='" + app.globalData.useraccount.userid + "'"
             },

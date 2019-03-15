@@ -1,3 +1,4 @@
+// pages/user_teacher/view/view.js
 // pages/user_stu/ing/ing.js
 var app = getApp()
 Page({
@@ -6,9 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[],
-    userid:null,
- 
+    list: [],
+    userid: null,
+
   },
   lookInfo: function (e) {
     wx.navigateTo({
@@ -21,19 +22,19 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-   that.setData({userid: app.globalData.useraccount.userid})
+    that.setData({ userid: app.globalData.useraccount.userid })
     wx.request({
       url: 'https://sxtliujiguolema.xyz',
       data: {
-        sql: "select time,classroom,course,building,school,need_table.ID from  need_table,find_table  where need_table.ID=find_table.reqid and status=0 and examine = 1 and (stu_id0='" + that.data.userid + "'or stu_id1='" + that.data.userid + "'or stu_id2='" + that.data.userid + "'or stu_id3='" + that.data.userid + "')"
+        sql: "select time,classroom,course,building,school,need_table.ID from  need_table,find_table  where need_table.ID=find_table.reqid and status=0 and examine = 1 and issue_id = '" + that.data.userid+"'"
       },
       success(res) {
-       // console.log(res)
+        // console.log(res)
         let list = that.data.list
         list = []
         var obj = {}
         for (var i = 0; i < res.data.length; i++) {
-          obj.num = i+1
+          obj.num = i + 1
           obj.time = res.data[i].time
           obj.classroom = res.data[i].classroom
           obj.course = res.data[i].course

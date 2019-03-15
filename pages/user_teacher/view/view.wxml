@@ -1,0 +1,31 @@
+<!--pages/user_teacher/view/view.wxml-->
+<!--pages/user_stu/ing/ing.wxml-->
+<view class="bg-img" style="background-image: url('http://images.wenming.cn/web_wenming/syjj/dfcz/hn_1680/201608/W020160817544087217656.jpg');height:200px;">
+</view>
+
+<view class="cu-list menu sm-border card-menu margin-top">
+  <view class="cu-list menu menu-avatar" wx:for="{{list}}">
+
+    <view class="cu-item" bindtap='lookInfo' id='{{item.id}}'>
+      <view class="cu-avatar sm round margin-left" style="background-color:#aaaaaa;">
+        <text class='text-brown'>{{item.num}}</text>
+      </view>
+      <view class='content'>
+        <view class='text-black'>
+          {{item.school}}-{{item.classroom}}
+        </view>
+         <view class='text-black'>
+          {{item.course}}
+        </view>
+      </view>
+      <view class='action'>
+        <view class='text-black text-sm'>{{item.time}}</view>
+      </view>
+    </view>
+
+
+
+
+
+  </view>
+</view>

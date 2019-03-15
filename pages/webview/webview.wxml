@@ -1,3 +1,3 @@
 <!--pages/webview/webview.wxml-->
-<web-view src="http://127.0.0.1:3000/upload"></web-view>
 <!-- <web-view src="sxtliujiguolema.xyz:3000/upload"></web-view> -->
+<text class='text-lg'>请打开QQ浏览器访问链接地址</text>

@@ -73,7 +73,7 @@ Page({
   loginbtnclick:function(){
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1:3000',
+      url: 'https://sxtliujiguolema.xyz',
       data: {
         sql: "SELECT id ,pwd FROM student_table WHERE id= '" + that.data.userid + "' and pwd= '" + that.data.password + "' union SELECT id , pwd FROM teacher_table where id= '" + that.data.userid + "' and pwd= '" + that.data.password + "' union SELECT id ,pwd FROM admin_table where id= '" + that.data.userid + "' and pwd= '" + that.data.password + "'"},
       success(res) {

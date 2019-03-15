@@ -34,6 +34,13 @@
       <text class='text-grey '>密码修改</text>
     </view>
   </view>
+  
+   <view class="cu-item arrow" bindtap='exit' >
+    <view class=' content '>
+      <text class='icon-list text-grey '></text>
+      <text class='text-grey '>退出</text>
+    </view>
+  </view>
 
 </view>
 <!-- 信息弹出窗 -->
@@ -53,6 +60,6 @@ show="{{ infomodishow }}" show-cancel-button bind:confirm="infomodiConfirm" bind
 <van-dialog use-slot async-close show="{{ show }}"
 title = "密码修改"  show-cancel-button bind:confirm="pdwConfirm" bind:cancel="pwdClose">
   <van-field value="{{oripwd}}" type="password" label="原密码" placeholder="请输入原密码 " bind:change="getori" />
-  <van-field value="{{oripwd2}}" type="password" label="原密码" placeholder="请再次输入原密码 " bind:change="getori2" />
-  <van-field value="{{newpwd}}" type="password" label="新密码" placeholder="请输入新密码 " bind:change="getnew" />
+  <van-field value="{{newpwd0}}" type="password" label="新密码" placeholder="请输入新密码 " bind:change="getori2" />
+  <van-field value="{{newpwd}}" type="password" label="新密码" placeholder="请再次输入输入新密码 " bind:change="getnew" />
 </van-dialog>

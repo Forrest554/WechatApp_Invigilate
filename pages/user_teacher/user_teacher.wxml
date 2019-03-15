@@ -1,4 +1,29 @@
-<!--pages/user_teacher/user_teacher.wxml-->
- <van-cell title="查看监考报名进度" icon="shop-o" size="large" is-link arrow-direction="down" />
-    <van-cell title="上传监考需求" icon="shop-o"     size="large" is-link arrow-direction="down" />
-    <van-cell title="设置" icon="shop-o" is-link size="large" arrow-direction="down" />
+<!--  -->
+<view class="bg-img" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552207925771&di=f560c420c30cd7ffccc0792d50086c6a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201808%2F18%2F20180818144330_nqede.jpeg');height:200px;">
+</view>
+
+<!-- 菜单 -->
+<view class="cu-list menu sm-border card-menu margin-top">
+  <view class="cu-item arrow" bindtap='toUpload'>
+    <view class='content'>
+      <text class='icon-circlefill text-grey'></text>
+      <text class='text-grey'>上传监考需求</text>
+    </view>
+  </view>
+
+  <view class="cu-item arrow" bindtap='toFillIn'>
+    <view class='content'>
+      <text class='icon-circlefill text-grey'></text>
+      <text class='text-grey'>填写监考需求</text>
+    </view>
+  </view>
+
+  <view class="cu-item arrow" bindtap='toCheckProgress'>
+    <view class='content'>
+      <text class='icon-circlefill text-grey'></text>
+      <text class='text-grey'>查看监考报名进度</text>
+    </view>
+  </view>
+
+</view>
+

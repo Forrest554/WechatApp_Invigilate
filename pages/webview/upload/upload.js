@@ -1,4 +1,4 @@
-// pages/user_admin/user_admin.js
+// pages/webview/upload/upload.js
 Page({
 
   /**
@@ -7,6 +7,7 @@ Page({
   data: {
 
   },
+  
 
   /**
    * 生命周期函数--监听页面加载
@@ -14,22 +15,7 @@ Page({
   onLoad: function (options) {
 
   },
-  download: function () {
-    wx.downloadFile({
-      url: 'https://sxtliujiguolema.xyz/output',
-      success(res) {
-        console.log("下载成功");
-        console.log(res);
-        const filePath = res.tempFilePath
-        wx.openDocument({
-          filePath,
-          success(res) {
-            console.log('打开文档成功')
-          }
-        })
-      }
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -41,6 +27,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.setClipboardData({
+      data: 'https://sxtliujiguolema.xyz/upload',
+      success(res) {
+        wx.getClipboardData({
+          success(res) {
+            console.log(res.data)
+          }
+        })
+      }
+    })
+    wx.showToast({
+      title: '链接已复制到粘贴板，请打开浏览器访问',
+      duration: 2000
+    })
 
   },
 

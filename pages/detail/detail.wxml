@@ -1,31 +1,56 @@
-<!--pages/detail/detail.wxml-->
-<view class="content bg-white">
-  <view class='grid col-1 padding-lg'>
-    <view class='bg-gray padding radius text-center shadow-blur' flex-direction="row">
-      <text>监考需求\n</text>
-      <view class="text-left">
-        <text>课程 ： {{detail.course}}\n</text>
-        <text>教学班名称： {{detail.classname}}\n</text>
-        <text>班级组成： {{detail.class_form}}\n</text>
-        <text>任课教师： {{detail.class_teacher}}\n</text>
-        <text>考试时间 ： {{detail.time}}\n</text>
-        <text>考试地点： {{detail.school}}-{{detail.classroom}}\n</text>
-        <text>是否监考留学生 ： {{detail.foreign1}}\n</text>
-        <text>招募研究生监考人数：{{detail.yjs_num}}\n</text>
-        <text>考场人数： {{detail.stu_num}}\n</text>
-        <text>主监考教师信息:{{detail.exam_teacher}}\n</text>
-        <text>\n</text>
-      </view>
-      <view class='contern' wx:if="{{showbutton==true}}">
-        <!-- <view wx:if="{{showbutton==true}}"> -->
-          <view wx:if="{{done==false}}">
-            <button class='cu-btn round lg bg-black shadow' bindtap='comfirm'>报名</button>
-          </view>
-          <view wx:elif="{{done==true}}">
-            <button class='cu-btn round lg bg-red shadow' bindtap='cancel'>取消报名</button>
-          </view>
-        </view>
-      <!-- </view> -->
+<view class="padding text-left">
+  <view class="padding-lg radius shadow-warp bg-white margin-top">
+    <text class='text-bold text-center text-black text-lg'>监考详情：\n</text>
+    <text class='text-lg text-grey '>课程 ：{{dataDetail.course}}\n</text>
+    <text class='text-lg text-grey'>教学班名称： {{dataDetail.classname}}\n</text>
+    <text class='text-lg text-grey'>班级组成： {{dataDetail.class_form}}\n</text>
+    <text class='text-lg text-grey'>任课教师： {{dataDetail.class_teacher}}\n</text>
+    <text class='text-lg text-grey'>考试时间 ： {{dataDetail.time}}\n</text>
+    <text class='text-lg text-grey'>考试地点： {{dataDetail.school}}-{{dataDetail.classroom}}\n</text>
+    <text class='text-lg text-grey'>是否监考留学生 ： {{dataDetail.foreign1?'是':'否'}}\n</text>
+    <text class='text-lg text-grey'>招募研究生监考人数：{{dataDetail.yjs_num}}\n</text>
+    <text class='text-lg text-grey'>考场人数： {{dataDetail.stu_num}}\n</text>
+  </view>
+
+
+  <view class="padding-lg radius shadow-warp bg-white margin-top">
+    <text class='text-black text-center text-bold text-lg'>主监考教师信息：\n</text>
+    <text class='text-lg text-grey'>姓名： {{dataDetail.name}}\n</text>
+    <text class='text-lg text-grey'>联系电话： {{dataDetail.phone}}\n</text>
+  </view>
+
+  
+  <view class="padding-lg radius shadow-warp bg-white margin-top" hidden='{{!show}}'>
+    <text class='text-black text-center text-bold text-lg'>报名情况：</text>
+    <view class='flex margin-top'>
+    <view class="cu-progress round">
+      <view class='bg-green' style="width:{{percent}}%;"></view>
+      <text class='margin-left'>{{dataDetail.hasnum}}/{{dataDetail.yjs_num}}</text>
     </view>
+    </view>
+    <view class = "cu-form-group" hidden='{{0<dataDetail.yjs_num?false:true}}'>
+      <view class='title'>学生1</view>
+      <input value="{{student[0]}}" class='radius bg-gray' disabled='{{change}}' hidden='{{0<dataDetail.yjs_num?false:true}}' name='inputStu0' bindinput="inputstu0"></input>
+    </view>
+    <view class = "cu-form-group" hidden='{{1<dataDetail.yjs_num?false:true}}'>
+      <view class='title'>学生2</view>
+      <input value="{{student[1]}}" class='radius bg-gray' disabled='{{change}}' hidden='{{1<dataDetail.yjs_num?false:true}}' name='inputStu1' bindinput="inputstu1"></input>
+    </view>
+    <view class = "cu-form-group" hidden='{{2<dataDetail.yjs_num?false:true}}'>
+      <view class='title'>学生3</view>
+      <input value="{{student[2]}}" class='radius bg-gray' disabled='{{change}}' hidden='{{2<dataDetail.yjs_num?false:true}}' name='inputStu2' bindinput="inputstu2"></input>
+    </view>
+    <view class = "cu-form-group" hidden='{{3<dataDetail.yjs_num?false:true}}' >
+      <view class='title'>学生4</view>
+      <input value="{{student[3]}}" class='radius bg-gray' disabled='{{change}}' hidden='{{3<dataDetail.yjs_num?false:true}}' name='inputStu3' bindinput="inputstu3"></input>
+    </view>
+
+
+    <view class='flex padding justify-around'>
+      <button class='cu-btn round shadow bg-red' bindtap='cancelChange'>取消修改</button>
+    <button class='cu-btn round shadow bg-green' bindtap='saveChange'>保存修改</button>
+    </view>
+    
+    
   </view>
 </view>

@@ -100,7 +100,7 @@ Page({
     })
     var that = this
     wx.request({
-      url: 'http://127.0.0.1:3000',
+      url: 'https://sxtliujiguolema.xyz',
       data: {
         sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table where need_table.ID = find_table.reqid and status=0 and examine = 1 and school= '" + that.data.choice[0] + "' and building= '" + that.data.choice[1] + "'"
       },
@@ -156,7 +156,7 @@ Page({
     })
     // console.log(time)
     wx.request({
-      url: 'http://127.0.0.1:3000',
+      url: 'https://sxtliujiguolema.xyz',
       data: {
         sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table where need_table.ID = find_table.reqid and status=0 and examine = 1 and time= '" + that.data.time + "'"
       },
@@ -220,7 +220,7 @@ Page({
     var str = that.deal(that.data.inputSearch);
     //console.log(str);
     wx.request({
-      url: 'http://127.0.0.1:3000',
+      url: 'https://sxtliujiguolema.xyz',
       data: {
         sql: "select time,classroom,course,building,yjs_num,need_table.ID,hasnum from  need_table,find_table where need_table.ID = find_table.reqid and status=0 and examine = 1 and course like '" + str + "'"
       },

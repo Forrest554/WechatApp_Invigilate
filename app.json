@@ -15,10 +15,12 @@
     "pages/news/news",
     "pages/detail/detail",
     "pages/webview/webview",
+    "pages/webview/upload/upload",
     "pages/user/user",
-
+    "pages/user_teacher/user_teacher",
+    "pages/user_teacher/view/view",
+    "pages/fillin/fillin"
     
-    "pages/user_teacher/user_teacher"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -36,7 +38,11 @@
       "van-tabs": "/pages/miniprogram_npm/vant-weapp/tabs/index",
       "van-search": "/pages/miniprogram_npm/vant-weapp/search/index",
       "van-dialog": "/pages/miniprogram_npm/vant-weapp/dialog/index",
-      "van-field": "/pages/miniprogram_npm/vant-weapp/field/index"
+      "van-field": "/pages/miniprogram_npm/vant-weapp/field/index",
+      "van-radio": "/pages/miniprogram_npm/vant-weapp/radio/index",
+      "van-radio-group": "/pages/miniprogram_npm/vant-weapp/radio-group/index",
+      "van-cell": "/pages/miniprogram_npm/vant-weapp/cell/index",
+      "van-cell-group": "/pages/miniprogram_npm/vant-weapp/cell-group/index"
 
   } ,
   "tabBar": {

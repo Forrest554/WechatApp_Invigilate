@@ -17,7 +17,7 @@ Page({
     var that = this
     that.setData({ userid: app.globalData.useraccount.userid })
     wx.request({
-      url: 'http://127.0.0.1:3000',
+      url: 'https://sxtliujiguolema.xyz',
       data: {
         sql: "select time,classroom,course,building,school,need_table.ID from  need_table,find_table  where need_table.ID=find_table.reqid and status=1 and examine = 1 and (stu_id0='" + that.data.userid + "'or stu_id1='" + that.data.userid + "'or stu_id2='" + that.data.userid + "'or stu_id3='" + that.data.userid + "')"
       },
