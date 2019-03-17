@@ -11,13 +11,9 @@
   <checkbox-group bindchange="checkboxChange">
 
     <view class="cu-list menu menu-avatar" wx:for="{{list}}">
-      <!-- <label class="checkbox" wx:for="{{list}}">
-      </label> -->
-      
-      <view class="cu-item" id='{{item.id}}'>
-
+      <view class="cu-item">
         <view class="cu-avatar sm round margin-left" style="background-color:#aaaaaa;">
-          <text class='text-brown'>{{item.num}}</text>
+          <text class='text-brown' id='{{item.id}}' bindtap='lookInfo'>{{item.num}}</text>
         </view>
         <view class='content'>
           <view class='text-black'>
@@ -27,10 +23,10 @@
             {{item.course}}
           </view>
         </view>
-       
+
         <view class='action'>
           <view class='text-black text-sm'>{{item.time}}</view>
-           <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+          <checkbox value="{{item.id}}" checked="{{item.checked}}" />
         </view>
       </view>
 

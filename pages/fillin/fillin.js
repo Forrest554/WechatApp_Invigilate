@@ -27,8 +27,11 @@ Page({
       '艺术大楼',
       '信息大楼'
     ],
-    time: '12:01',
-    date: '2019-03-04',
+    time: null,
+    index:null,
+    timearray: [" 8:15-10:15", "13:30-15:30"],
+    array: ['美国', '中国', '巴西', '日本'],
+    date: '2019-01-35',
     schoolindex:0,
     buildingindex:0,
     ifForeign:false
@@ -95,9 +98,11 @@ Page({
     })
   },
   TimeChange(e) {
-    this.setData({
-      time: e.detail.value
+    var that = this
+    that.setData({
+      index: e.detail.value,
     })
+    that.setData({ time: that.data.timearray[that.data.index]})
   },
   PickerChange(e) {
     console.log(e);
@@ -123,7 +128,7 @@ Page({
     wx.request({
       url: 'https://sxtliujiguolema.xyz',
       data: {
-        sql: "insert into need_table(course,classname,class_form,class_teacher,time,school,foreign1,yjs_num,building,classroom,stu_num,exam_teacher,issue_id) values ('" + e.detail.value.inputCourse + "','" + e.detail.value.inputClassName + "','" + e.detail.value.inputClassForm + "','" + e.detail.value.inputClassTeacher + "','" + e.detail.value.inputDate + ' ' + e.detail.value.inputTime + "','" + e.detail.value.inputSchool + "'," + e.detail.value.inputIfForeign + "," + parseInt(e.detail.value.inputYjsNum) + ",'" + e.detail.value.inputBuilding + "','" + e.detail.value.inputExamClass + "'," + e.detail.value.inputExamNum + ",'" + e.detail.value.inputExamTeacher + "','issue_id')",
+        sql: "insert into need_table(course,classname,class_form,class_teacher,time,school,foreign1,yjs_num,building,classroom,stu_num,exam_teacher,issue_id) values ('" + e.detail.value.inputCourse + "','" + e.detail.value.inputClassName + "','" + e.detail.value.inputClassForm + "','" + e.detail.value.inputClassTeacher + "','" + e.detail.value.inputDate + ' ' + that.data.time + "','" + e.detail.value.inputSchool + "'," + e.detail.value.inputIfForeign + "," + parseInt(e.detail.value.inputYjsNum) + ",'" + e.detail.value.inputBuilding + "','" + e.detail.value.inputExamClass + "'," + e.detail.value.inputExamNum + ",'" + e.detail.value.inputExamTeacher + "','" + app.globalData.useraccount.userid+"')"
       },
       success(res) {
         console.log("请求成功");
@@ -146,9 +151,6 @@ Page({
               })
             }
           },
-          complete() {
-
-          }
         })
         console.log(res);
       },

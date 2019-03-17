@@ -16,6 +16,11 @@ Page({
       url: '/pages/user_stu/user_stu',
     })
     else{
+      wx.showToast({
+        title: '您没有访问权限',
+        icon:'none',
+        duration: 1000
+      })
       
     }
   },
@@ -25,7 +30,11 @@ Page({
         url: '/pages/user_teacher/user_teacher',
       })
     else {
-
+      wx.showToast({
+        title: '您没有访问权限',
+        icon: 'none',
+        duration: 1000
+      })
     }
   },
   jmp_admin: function (event) {
@@ -34,7 +43,11 @@ Page({
         url: '/pages/user_admin/user_admin',
       })
     else {
-
+      wx.showToast({
+        title: '您没有访问权限',
+        icon: 'none',
+        duration: 1000
+      })
     }
   },
   /**

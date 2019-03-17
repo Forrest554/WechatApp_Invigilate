@@ -88,7 +88,8 @@ Page({
             password: res.data[0].pwd };
           //  console.log(app.globalData.useraccount.userid);
           if (res.data[0].id[0] == 'a') app.globalData.power = 3;
-          if (res.data[0].id[0] == 'T') app.globalData.power = 2;
+         else  if (res.data[0].id[0] == 'T') app.globalData.power = 2;
+          else app.globalData.power = 1;
         //  console.log(app.globalData.power);
           wx.switchTab({
             url: '../index/index',

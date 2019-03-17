@@ -69,10 +69,10 @@ Page({
     wx.request({
       url: 'https://sxtliujiguolema.xyz',
       data: {
-        sql: "select time,classroom,course,building,school,need_table.ID from  need_table,find_table  where need_table.ID=find_table.reqid and status=0 and examine = 0"
+        sql: "select need_table.ID,time,classroom,course,building,school,need_table.ID from  need_table,find_table  where need_table.ID=find_table.reqid and status=0 and examine = 0"
       },
       success(res) {
-        // console.log(res)
+         console.log(res)
         let list = that.data.list
         list = []
         var obj = {}

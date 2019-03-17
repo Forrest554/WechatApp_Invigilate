@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>上传监考信息</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <form enctype="multipart/form-data" method="post" action='dealwith'>
+        <div class="form-group">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-8">
+                <div class="input-group">
+                    <input type="location" class="form-control input-lg" onclick="$('#i-file').click();this.value='已选择';" value="文件名" onchange="name()" id="file">
+                    <label class="input-group-btn">
+                        <input type="button" id="i-check" value="浏览文件" class="btn btn-primary btn-lg" onclick="$('#i-file').click(); document.getElementById('file').value='已选择';">
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-1">
+                <button type="submit" class="btn btn-success btn-lg">提交</button>
+            </div>
+            <div class="col-xs-1">
+            	<a class="btn btn-info btn-lg" href='/result'>查看提交结果</a>
+            </div>
+            <div class="col-xs-1"></div>
+            <input type="file" name="file" id="i-file" accept=".xls,.xlsx" onchange="$('#location').val($('i-file').val());" style="display: none">
+        </div>
+    </form>
+</body>
+
+</html>

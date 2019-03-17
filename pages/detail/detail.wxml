@@ -18,7 +18,9 @@
     <text class='text-lg text-grey'>姓名： {{dataDetail.name}}\n</text>
     <text class='text-lg text-grey'>联系电话： {{dataDetail.phone}}\n</text>
   </view>
-
+ <view class='flex padding justify-around' hidden='{{!student_power}}'>
+      <button class='cu-btn round shadow bg-{{apply?"red":"green"}}' bindtap='student_apply'>{{apply?"取消报名":"报名"}}</button>
+    </view>
   
   <view class="padding-lg radius shadow-warp bg-white margin-top" hidden='{{!show}}'>
     <text class='text-black text-center text-bold text-lg'>报名情况：</text>
